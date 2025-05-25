@@ -39,12 +39,6 @@ import com.yourapp.ui.theme.CenturyOldStyle
 import com.yourapp.ui.theme.Neuzeit
 import com.yourapp.ui.theme.Tangerine
 
-// Dummy R.drawable references for demonstration.
-// In a real app, you would have actual drawable resources.
-// For this example, we'll use placeholder images.
-
-
-// Data classes for Product and Category
 data class Product(
     val id: String,
     val name: String,
@@ -67,7 +61,6 @@ data class Category(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShopFlowScreen() {
-    // Sample data for demonstration
     val categories = listOf(
         Category("1", "Cleaners"),
         Category("2", "Toner"),
@@ -127,11 +120,11 @@ fun ShopFlowScreen() {
                         text = "Shop",
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp,
-                        color = Color.White // Dark theme for top bar
+                        color = Color.White
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /* Handle back navigation */ }) {
+                    IconButton(onClick = {  }) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Back", tint = Color.White)
                     }
                 },
@@ -146,17 +139,17 @@ fun ShopFlowScreen() {
                                     icon = Icons.Default.FavoriteBorder,
                                     contentDescription = "Wishlist",
                                     badgeCount = 5,
-                                    onClick = { /* Wishlist */ }
+                                    onClick = {  }
                                 )
                                 IconWithBottomBadge(
                                     icon = Icons.Default.ShoppingCart,
                                     contentDescription = "Cart",
                                     badgeCount = 3,
-                                    onClick = { /* Cart */ }
+                                    onClick = {  }
                                 )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF1E1E1E), // Dark grey for top bar
+                    containerColor = Color(0xFF1E1E1E),
                     titleContentColor = Color.White,
                     actionIconContentColor = Color.White,
                     navigationIconContentColor = Color.White
@@ -174,7 +167,6 @@ fun ShopFlowScreen() {
               OfferBannerWithImageBackground()
             }
 
-            // Categories Section
             item {
                 Row(
                     modifier = Modifier
@@ -193,8 +185,8 @@ fun ShopFlowScreen() {
                     Text(
                         text = "See all",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = Color(0xFF888888), // Lighter grey for "See all"
-                        modifier = Modifier.clickable { /* Handle see all categories */ }
+                        color = Color(0xFF888888),
+                        modifier = Modifier.clickable {  }
                     )
                 }
                 LazyRow(
@@ -277,22 +269,14 @@ fun CategoryItem(category: Category) {
 }
 
 
-@Preview
-@Composable
-private fun PreviewNewProductTheme() {
-    MaterialTheme(
-        colorScheme = DarkColorScheme // Use a custom dark color scheme for preview
-    ) {
-      //  NewProductSection(Product())
-    }
-}
+
 @Composable
 fun NewProductSection(product: Product) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(horizontal = 16.dp, vertical = 8.dp) // Add padding for the whole card
+            .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Image(
             painter = painterResource(id = R.drawable.card_grey_bg),
@@ -314,7 +298,7 @@ fun NewProductSection(product: Product) {
                     .padding(12.dp)
             ) {
                 IconButton(
-                    onClick = { /* Handle favorite click */ },
+                    onClick = { },
                     modifier = Modifier
                         .align(Alignment.TopStart)
                         .background(Color.Black, CircleShape)
@@ -326,7 +310,6 @@ fun NewProductSection(product: Product) {
                         tint =  Color(0xFFB6A3F1)
                     )
                 }
-                // Best Seller tag at top right
                 if (product.isBestSeller) {
                     Text(
                         text = "Best seller",
@@ -353,7 +336,7 @@ fun NewProductSection(product: Product) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .wrapContentHeight() ,// Wrap content height
+                    .wrapContentHeight() ,
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.card_black_shape), //
@@ -490,25 +473,8 @@ fun NewProductSection(product: Product) {
 @Preview(showBackground = true, widthDp = 360)
 @Composable
 fun PreviewShopFlowScreen() {
-    MaterialTheme(
-        colorScheme = DarkColorScheme // Use a custom dark color scheme for preview
-    ) {
+    MaterialTheme {
         ShopFlowScreen()
     }
 }
 
-// Custom dark color scheme to match the image
-val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFFBB86FC), // A purple accent
-    onPrimary = Color.Black,
-    primaryContainer = Color(0xFF1E1E1E), // Dark grey for top bar
-    onPrimaryContainer = Color.White,
-    secondary = Color(0xFF03DAC5), // A teal accent
-    onSecondary = Color.Black,
-    background = Color(0xFF1E1E1E), // Overall dark background
-    onBackground = Color.White,
-    surface = Color(0xFF2A2A2A), // Card background
-    onSurface = Color.White,
-    surfaceVariant = Color(0xFF3A3A3A), // Category item background
-    onSurfaceVariant = Color.White
-)
