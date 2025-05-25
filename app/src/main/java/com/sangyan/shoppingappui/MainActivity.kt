@@ -74,89 +74,6 @@ class MainActivity : ComponentActivity() {
             ShoppingAppUITheme {
                 ShopFlowScreen()
             }
-//           ShoppingAppUITheme {
-//                Scaffold(
-//                    topBar = {
-//                        TopAppBar(
-//                            title = {
-//                                Text(
-//                                    text = "Shop",
-//                                    color = Color.White,
-//                                    fontWeight = FontWeight.Bold,
-//                                    fontSize = 22.sp
-//                                )
-//                            },
-//                            navigationIcon = {
-//                                IconButton(onClick = { /* handle back */ }) {
-//                                    Icon(
-//                                        Icons.Default.ArrowBack,
-//                                        contentDescription = "Back",
-//                                        tint = Color.White
-//                                    )
-//                                }
-//                            },
-//                            actions = {
-//                                IconWithBottomBadge(
-//                                    icon = Icons.Default.Search,
-//                                    contentDescription = "Search",
-//                                    badgeCount = 0,
-//                                    onClick = { /* Wishlist */ }
-//                                )
-//                                IconWithBottomBadge(
-//                                    icon = Icons.Default.FavoriteBorder,
-//                                    contentDescription = "Wishlist",
-//                                    badgeCount = 5,
-//                                    onClick = { /* Wishlist */ }
-//                                )
-//                                IconWithBottomBadge(
-//                                    icon = Icons.Default.ShoppingCart,
-//                                    contentDescription = "Cart",
-//                                    badgeCount = 3,
-//                                    onClick = { /* Cart */ }
-//                                )
-//                            },
-//                            colors = TopAppBarDefaults.topAppBarColors(
-//                                containerColor = Color.Gray,
-//                                titleContentColor = Color.White
-//                            )
-//                        )
-//                    },
-//                    containerColor = Color.Gray,
-//                    content = {
-//                        LazyColumn {
-//                            item {
-//                                OfferBannerWithImageBackground(backgroundImage = painterResource(R.drawable.banner_card_foreground))
-//
-//                            }
-//                            item {
-//
-//                                Row(
-//                                    modifier = Modifier
-//                                        .fillMaxWidth()
-//                                        .padding(start = 12.dp , end = 12.dp),
-//                                    horizontalArrangement = Arrangement.SpaceBetween
-//                                ) {
-//                                    Text(
-//                                        text = "Categories",
-//                                        color = Color.White,
-//                                        fontWeight = FontWeight.Bold,
-//                                        fontSize = 20.sp
-//                                    )
-//                                    Text(
-//                                        text = "See all",
-//                                        color = Color.White,
-//                                        fontWeight = FontWeight.Bold,
-//                                        fontSize = 14.sp
-//                                    )
-//
-//                                }
-//                            }
-//
-//                        }
-//
-//                    }
-//                )
-//            }
         }
     }
 }
@@ -210,15 +127,13 @@ fun OfferBannerWithImageBackground(
     modifier: Modifier = Modifier,
     backgroundImage: Painter = painterResource(R.drawable.banner_card_foreground)
 ) {
-
-
     Box(
         modifier = modifier
             .fillMaxWidth()
             .padding(top = 16.dp)
             .height(210.dp)
     ) {
-        // Background image
+
         Image(
             painter = backgroundImage,
             contentDescription = "Offer Background",
@@ -226,72 +141,6 @@ fun OfferBannerWithImageBackground(
             modifier = Modifier
                 .matchParentSize()
         )
-
-
-        //    Content overlay
-//        Row(
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .padding(top = 120.dp, start = 20.dp, end = 20.dp),
-//            horizontalArrangement = Arrangement.SpaceBetween,
-//            verticalAlignment = Alignment.CenterVertically
-//        ) {
-//            Column() {
-//                Text(
-//                    text = "GET 20% OFF",
-//                    color = Color.White,
-//                    fontWeight = FontWeight.Bold,
-//                    fontSize = 30.sp
-//                )
-//                Text(
-//                    modifier = Modifier.padding(top = 8.dp),
-//                    text = "Get 20% off",
-//                    color = Color.Gray,
-//                    fontSize = 14.sp
-//                )
-//                Row(
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .padding(top = 15.dp),
-//                    horizontalArrangement = Arrangement.SpaceBetween,
-//                    verticalAlignment = Alignment.CenterVertically
-//                ) {
-//                    Box(
-//                        modifier = Modifier
-//                            .background(Color(0xFFCCFF00), shape = RoundedCornerShape(50))
-//                            .padding(horizontal = 12.dp, vertical = 4.dp),
-//                        contentAlignment = Alignment.BottomEnd
-//                    ) {
-//                        Text(
-//                            text = "12-16 October",
-//                            fontSize = 12.sp,
-//                            color = Color.Black,
-//                            fontWeight = FontWeight.Medium
-//                        )
-//                    }
-//
-//
-//                    Box(
-//                        modifier = Modifier
-//                            .padding(end = 56.dp)
-//                    ) {
-//                        Icon(
-//                            imageVector = Icons.Default.AccountCircle, // Replace with cloud-style icon
-//                            contentDescription = "User",
-//                            tint = Color.White,
-//                            modifier = Modifier
-//                                .size(40.dp)
-//                        )
-//                    }
-//
-//
-//                }
-//
-//
-//            }
-//
-//
-//        }
         Column(
             modifier = Modifier
                 .fillMaxWidth()

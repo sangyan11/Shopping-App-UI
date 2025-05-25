@@ -302,7 +302,7 @@ fun NewProductSection(product: Product) {
                     modifier = Modifier
                         .align(Alignment.TopStart)
                         .background(Color.Black, CircleShape)
-                        .size(25.dp)
+                        .size(30.dp)
                 ) {
                     Icon(
                         imageVector =  if (product.isFavourite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
